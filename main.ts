@@ -4,6 +4,7 @@ SerialPin.USB_TX,
 SerialPin.USB_RX,
 BaudRate.BaudRate9600
 )
+serial.redirectToUSB()
 basic.forever(function () {
     신호 = serial.readString()
     if (신호 == "1") {
