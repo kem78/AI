@@ -1,18 +1,17 @@
-let 신호 = ""
 serial.redirect(
 SerialPin.USB_TX,
 SerialPin.USB_RX,
 BaudRate.BaudRate9600
 )
 basic.forever(function () {
-    신호 = serial.readString()
-    if (신호 == "1") {
+    serial.writeString("")
+    if (serial.readString() == "1") {
         basic.showIcon(IconNames.Scissors)
     }
-    if (신호 == "2") {
+    if (serial.readString() == "2") {
         basic.showIcon(IconNames.Ghost)
     }
-    if (신호 == "3") {
+    if (serial.readString() == "3") {
         basic.showIcon(IconNames.Pitchfork)
     }
 })
