@@ -2,7 +2,7 @@ let 신호 = ""
 serial.redirect(
 SerialPin.USB_TX,
 SerialPin.USB_RX,
-BaudRate.BaudRate19200
+BaudRate.BaudRate9600
 )
 basic.forever(function () {
     신호 = serial.readString()
